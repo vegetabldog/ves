@@ -1,28 +1,28 @@
-﻿#include "graphicsview.h"
+#include "graphicsview.h"
 #include <QSvgGenerator>
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
 #include <QFileInfo>
 #include <QMessageBox>
-//GraphicsView::GraphicsView(QWidget *parent) :
-//    QGraphicsView(parent)
-//{
-//    this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-//    this->setResizeAnchor(QGraphicsView::AnchorUnderMouse);
-//}
-GraphicsView::GraphicsView(QGraphicsScene *scene)
-    :QGraphicsView(scene)
+GraphicsView::GraphicsView(QWidget *parent) :
+    QGraphicsView(parent)
 {
-    m_hruler = new QtRuleBar(Qt::Horizontal,this,this);
-    m_vruler = new QtRuleBar(Qt::Vertical,this,this);
-    box = new QtCornerBox(this);
-    setViewport(new QWidget);
-
-    setAttribute(Qt::WA_DeleteOnClose);
-    isUntitled = true;
-
-    modified = false;
+    this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    this->setResizeAnchor(QGraphicsView::AnchorUnderMouse);
 }
+//GraphicsView::GraphicsView(QGraphicsScene *scene)
+//    :QGraphicsView(scene)
+//{
+//    m_hruler = new QtRuleBar(Qt::Horizontal,this,this);
+//    m_vruler = new QtRuleBar(Qt::Vertical,this,this);
+//    box = new QtCornerBox(this);
+//    setViewport(new QWidget);
+
+//    setAttribute(Qt::WA_DeleteOnClose);
+//    isUntitled = true;
+
+//    modified = false;
+//}
 void GraphicsView::keyPressEvent(QKeyEvent *event)//键盘事件
 {
     switch (event->key())
