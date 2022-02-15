@@ -1,4 +1,4 @@
-﻿#include "graphicsrectitem.h"
+#include "graphicsrectitem.h"
 #include <QPen>
 #include <QPainter>
 #include <QDebug>
@@ -231,25 +231,25 @@ QRectF GraphicsRectItem::boundingRect() const
 {
     return rect();
 }
- QXmlStreamWriter xml(&file);
- xml.writeAttribute("width",QString("%1").arg(scene()->width()));
- xml.writeAttribute("height",QString("%1").arg(scene()->height()));
+// QXmlStreamWriter xml(&file);
+// xml.writeAttribute("width",QString("%1").arg(scene()->width()));
+// xml.writeAttribute("height",QString("%1").arg(scene()->height()));
 
-bool GraphicsItem::writeBaseAttributes(QXmlStreamWriter *xml)//写xml文件
-{
-    xml->writeAttribute(tr("rotate"),QString("%1").arg(rotation()));
-    xml->writeAttribute(tr("x"),QString("%1").arg(pos().x()));
-    xml->writeAttribute(tr("y"),QString("%1").arg(pos().y()));
-    xml->writeAttribute(tr("z"),QString("%1").arg(zValue()));
-    xml->writeAttribute(tr("width"),QString("%1").arg(m_width));
-    xml->writeAttribute(tr("height"),QString("%1").arg(m_height));
-    return true;
-}
+//bool GraphicsItem::writeBaseAttributes(QXmlStreamWriter *xml)//写xml文件
+//{
+//    xml->writeAttribute(tr("rotate"),QString("%1").arg(rotation()));
+//    xml->writeAttribute(tr("x"),QString("%1").arg(pos().x()));
+//    xml->writeAttribute(tr("y"),QString("%1").arg(pos().y()));
+//    xml->writeAttribute(tr("z"),QString("%1").arg(zValue()));
+//    xml->writeAttribute(tr("width"),QString("%1").arg(m_width));
+//    xml->writeAttribute(tr("height"),QString("%1").arg(m_height));
+//    return true;
+//}
 
-bool GraphicsRectItem::saveToXml(QXmlStreamWriter * xml)
-{
-    xml->writeStartElement(QObject::tr("rect"));
-    writeBaseAttributes(xml);
-    xml->writeEndElement();
-    return true;
-}
+//bool GraphicsRectItem::saveToXml(QXmlStreamWriter * xml)
+//{
+//    xml->writeStartElement(QObject::tr("rect"));
+//    writeBaseAttributes(xml);
+//    xml->writeEndElement();
+//    return true;
+//}
